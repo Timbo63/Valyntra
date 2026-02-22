@@ -1,31 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Valyntra | AI Operational Intelligence</title>
 
 <meta name="description" content="Valyntra helps organizations identify and implement high-impact AI opportunities that reduce cost and improve operational performance.">
-<meta name="keywords" content="AI consulting, business automation, operational efficiency, AI adoption, healthcare AI">
-<meta name="author" content="Valyntra LLC">
 
-<!-- Google Analytics (replace ID when ready) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXX"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-XXXXXXXX');
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
-body{
+body {
 margin:0;
-font-family: Arial, Helvetica, sans-serif;
+font-family:'Inter',sans-serif;
+background:#ffffff;
 color:#111827;
 line-height:1.6;
 }
@@ -39,10 +28,9 @@ padding:80px 0;
 
 nav{
 position:fixed;
-top:0;
 width:100%;
 background:white;
-box-shadow:0 2px 6px rgba(0,0,0,0.06);
+box-shadow:0 2px 8px rgba(0,0,0,.05);
 z-index:1000;
 }
 
@@ -53,90 +41,100 @@ align-items:center;
 width:90%;
 max-width:1100px;
 margin:auto;
-padding:12px 0;
+padding:16px 0;
 }
 
 .nav-logo{
-height:40px;
+height:42px;
 }
 
 nav a{
-margin-left:20px;
+margin-left:28px;
 text-decoration:none;
 color:#111827;
 font-weight:600;
+font-size:14px;
+letter-spacing:.5px;
 }
 
 .hero{
-background:#0B1F3A;
+background:linear-gradient(135deg,#0B1F3A 0%, #1E3A8A 100%);
 color:white;
 text-align:center;
-padding:160px 20px 120px 20px;
-}
-
-.hero img{
-width:180px;
-margin-bottom:20px;
+padding:180px 20px 140px 20px;
 }
 
 .hero h1{
-font-size:42px;
-margin-bottom:10px;
+font-size:52px;
+font-weight:700;
+margin-bottom:16px;
 }
 
 .hero p{
 font-size:20px;
-opacity:.9;
+opacity:.85;
+max-width:700px;
+margin:auto;
 }
 
 .btn{
 display:inline-block;
-margin-top:25px;
-padding:14px 28px;
+margin-top:32px;
+padding:16px 34px;
 background:#2563EB;
 color:white;
 text-decoration:none;
-border-radius:6px;
-font-weight:bold;
+border-radius:8px;
+font-weight:600;
+font-size:16px;
+transition:.3s ease;
+}
+
+.btn:hover{
+background:#1D4ED8;
+transform:translateY(-2px);
 }
 
 .section-title{
-font-size:32px;
-margin-bottom:20px;
+font-size:34px;
+font-weight:700;
+margin-bottom:24px;
 }
 
 .card{
 background:#F9FAFB;
-padding:25px;
-border-radius:8px;
-margin-bottom:20px;
+padding:32px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,.04);
+margin-bottom:24px;
 }
 
 .footer{
 background:#111827;
 color:white;
 text-align:center;
-padding:40px 20px;
+padding:50px 20px;
 }
 
-.reveal{
-opacity:0;
-transform:translateY(30px);
-transition:all .8s ease;
+.footer p{
+opacity:.7;
+font-size:14px;
 }
 
-.reveal.active{
-opacity:1;
-transform:translateY(0);
+@media(max-width:768px){
+.hero h1{
+font-size:38px;
+}
+.hero{
+padding:140px 20px 100px 20px;
+}
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <nav>
 <div class="nav-inner">
 <img src="valyntra-logo.png" class="nav-logo">
@@ -149,69 +147,51 @@ transform:translateY(0);
 </div>
 </nav>
 
-
-<!-- HERO -->
 <section class="hero">
-<img src="valyntra-logo.png">
-<h1>Operational Intelligence. Real Results.</h1>
-<p>Identify where AI creates measurable business value.</p>
+<h1>Operational Intelligence.<br>Real Results.</h1>
+<p>We help organizations convert AI potential into measurable operational performance and financial impact.</p>
 <a href="#contact" class="btn">Schedule Discovery Call</a>
 </section>
 
-
-<!-- WHAT WE DO -->
-<section class="container reveal">
+<section class="container">
 <h2 class="section-title">What We Do</h2>
 <p>
-Valyntra helps organizations identify where artificial intelligence can reduce cost,
-automate manual work, and improve operational performance.
-</p>
-<p>
-We analyze workflows, quantify financial impact, and deliver a clear implementation roadmap before any technology investment.
+Valyntra identifies where artificial intelligence can reduce cost, automate workflows, and accelerate execution.
+Every engagement begins with measurable ROI and ends with a clear roadmap.
 </p>
 </section>
 
-
-<!-- SERVICES -->
-<section class="container reveal" id="services">
-<h2 class="section-title">Primary Service</h2>
+<section class="container" id="services">
+<h2 class="section-title">AI Operational Efficiency Assessment</h2>
 
 <div class="card">
-<strong>AI Operational Efficiency Assessment</strong>
 <ul>
-<li>Workflow analysis</li>
-<li>Automation opportunities</li>
-<li>ROI modeling</li>
+<li>Operational workflow analysis</li>
+<li>Automation opportunity identification</li>
+<li>Financial impact & ROI modeling</li>
 <li>Implementation roadmap</li>
-<li>Technology recommendations</li>
+<li>Vendor-neutral technology recommendations</li>
 </ul>
-<p><strong>Timeline:</strong> 2–3 weeks</p>
+<p><strong>Engagement Duration:</strong> 2–3 weeks</p>
 </div>
 
 </section>
 
-
-<!-- INDUSTRIES -->
-<section class="container reveal" id="industries">
-<h2 class="section-title">Industries We Serve</h2>
-<ul>
-<li>Healthcare Practices & Clinics</li>
-<li>Multi-Location Medical Groups</li>
-<li>Professional Service Firms</li>
-<li>Operationally Complex SMBs</li>
-</ul>
+<section class="container" id="industries">
+<h2 class="section-title">Industries Served</h2>
+<div class="card">
+Healthcare Practices & Clinics<br>
+Multi-Location Medical Groups<br>
+Professional Services Firms<br>
+Operationally Complex SMBs
+</div>
 </section>
 
-
-<!-- ABOUT -->
-<section class="container reveal" id="about">
+<section class="container" id="about">
 <h2 class="section-title">About Valyntra</h2>
 <p>
-Valyntra is an AI adoption and execution platform focused on measurable business outcomes.
-</p>
-<p>
-We bridge the gap between AI capability and operational performance.
-Every engagement is structured around financial impact and execution clarity.
+Valyntra is an AI adoption and execution platform built for measurable business outcomes.
+We bridge business strategy with AI capability to unlock performance at scale.
 </p>
 <p>
 <strong>Founder:</strong> Timothy Sharp<br>
@@ -219,10 +199,8 @@ Founder & AI Adoption Strategist
 </p>
 </section>
 
-
-<!-- CONTACT -->
-<section class="container reveal" id="contact">
-<h2 class="section-title">Schedule a Discovery Call</h2>
+<section class="container" id="contact">
+<h2 class="section-title">Start the Conversation</h2>
 
 <p>Email: timothy@valyntra.io</p>
 <p>Phone: (405) 532-4525</p>
@@ -231,39 +209,11 @@ Founder & AI Adoption Strategist
 Book Time on My Calendar
 </a>
 
-<br><br>
-
-<form action="mailto:timothy@valyntra.io" method="post" enctype="text/plain">
-<input type="text" name="Name" placeholder="Your Name" required style="width:100%;padding:12px;margin-bottom:10px;">
-<input type="email" name="Email" placeholder="Your Email" required style="width:100%;padding:12px;margin-bottom:10px;">
-<textarea name="Message" placeholder="How can we help?" required style="width:100%;padding:12px;height:120px;"></textarea>
-<br>
-<button class="btn" type="submit">Send Message</button>
-</form>
-
 </section>
 
-
-<!-- FOOTER -->
 <footer class="footer">
 <p>© <script>document.write(new Date().getFullYear())</script> Valyntra LLC</p>
-<p>AI Operational Intelligence Platform</p>
 </footer>
-
-
-<script>
-function reveal(){
-var reveals=document.querySelectorAll(".reveal");
-for(var i=0;i<reveals.length;i++){
-var windowHeight=window.innerHeight;
-var elementTop=reveals[i].getBoundingClientRect().top;
-if(elementTop<windowHeight-100){
-reveals[i].classList.add("active");
-}
-}
-}
-window.addEventListener("scroll",reveal);
-</script>
 
 </body>
 </html>
