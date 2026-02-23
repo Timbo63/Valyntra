@@ -3,63 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Syne:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #0A0F1E;
+            --blue-deep: #0B1F3A;
+            --blue-bright: #2563EB;
+            --cream: #F8F6F1;
+        }
+        body {
+            font-family: 'DM Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--ink);
+            background-color: var(--cream);
+        }
+        .navbar {
+            background-color: var(--blue-deep);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background-color: var(--blue-bright);
+            color: white;
+        }
+        .dual-model {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px;
+        }
+        .problem, .metrics, .services, .customers, .case-study, .founder, .investors, .contact, .footer {
+            padding: 50px;
+        }
+        @media (max-width: 768px) {
+            .dual-model {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
     <title>Valyntra</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="hero">
+    <nav class="navbar">
+        <div>Logo Base64</div>
+        <div>
+            <a href="#hero">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+    <section class="hero" id="hero">
         <h1>Welcome to Valyntra</h1>
-        <p>Your partner for cutting-edge technology solutions.</p>
-        <a href="#services">Explore Our Services</a>
-    </header>
+        <p>Your solution for better business.</p>
+    </section>
     <section class="dual-model">
-        <div class="model">
-            <h2>Our Dual Model Approach</h2>
-            <p>We leverage unique strategies to solve complex problems.</p>
-        </div>
-        <div class="model">
-            <h2>Innovative Solutions</h2>
-            <p>Our technology advances are tailored to your needs.</p>
-        </div>
+        <div>Model 1 Content</div>
+        <div>Model 2 Content</div>
     </section>
     <section class="problem">
         <h2>The Problem</h2>
-        <p>Understand the challenges faced by our clients and how we address them.</p>
+        <p>Description of the problem...</p>
     </section>
     <section class="metrics">
-        <h2>Key Metrics</h2>
-        <ul>
-            <li>100+ Clients</li>
-            <li>200 Projects Completed</li>
-            <li>98% Satisfaction Rate</li>
-        </ul>
+        <h2>Metrics</h2>
+        <p>Statistics and metrics explanation...</p>
     </section>
     <section class="services" id="services">
         <h2>Our Services</h2>
-        <p>Valyntra offers an array of services from consulting to execution.</p>
+        <p>Details on various services...</p>
     </section>
     <section class="customers">
         <h2>Our Customers</h2>
-        <p>We work with leading brands to enhance their operations.</p>
+        <p>Testimonials from customers...</p>
     </section>
     <section class="case-study">
         <h2>Case Study</h2>
-        <p>Learn about our successful projects and their impact.</p>
+        <p>Details about the case study...</p>
     </section>
     <section class="founder">
-        <h2>Meet Our Founder</h2>
-        <p>A visionary leader guiding us towards success.</p>
+        <h2>Meet the Founder</h2>
+        <p>Information about the founder...</p>
     </section>
     <section class="investors">
         <h2>Our Investors</h2>
-        <p>Trusted backers of our mission to innovate.</p>
+        <p>Details about investors...</p>
     </section>
     <section class="contact" id="contact">
         <h2>Contact Us</h2>
-        <p>Get in touch for inquiries and partnership opportunities.</p>
+        <p>Contact form or details...</p>
     </section>
-    <footer>
+    <footer class="footer">
         <p>&copy; 2026 Valyntra. All rights reserved.</p>
     </footer>
 </body>
