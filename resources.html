@@ -17,310 +17,133 @@
   --blue-light: #60A5FA;
   --cream: #F8F6F1;
   --muted: #6B7280;
-  --border-light: rgba(0,0,0,0.07);
+  --border: rgba(0,0,0,0.07);
 }
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--cream); min-height: 100vh; }
+body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--cream); }
 
-/* LOGIN SCREEN */
+/* LOGIN */
 #login-screen {
-  min-height: 100vh;
-  background: var(--blue-deep);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 20px;
-  position: relative;
-  overflow: hidden;
+  min-height: 100vh; background: var(--blue-deep);
+  align-items: center; justify-content: center; padding: 40px 20px;
+  position: relative; overflow: hidden;
 }
 #login-screen::before {
-  content: '';
-  position: absolute;
-  top: -200px; right: -200px;
+  content: ''; position: absolute; top: -200px; right: -200px;
   width: 600px; height: 600px;
   background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
   border-radius: 50%;
 }
-#login-screen::after {
-  content: '';
-  position: absolute;
-  bottom: -150px; left: -150px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%);
-  border-radius: 50%;
-}
 .login-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 20px;
-  padding: 52px 48px;
-  width: 100%;
-  max-width: 420px;
-  position: relative;
-  z-index: 1;
-  backdrop-filter: blur(12px);
+  background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px; padding: 52px 48px; width: 100%; max-width: 420px;
+  position: relative; z-index: 1; backdrop-filter: blur(12px);
 }
-.login-logo {
-  display: flex; align-items: center; gap: 10px;
-  margin-bottom: 36px;
-}
-.login-logo-dot {
-  width: 10px; height: 10px;
-  background: var(--blue-bright);
-  border-radius: 50%;
-}
-.login-logo-text {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px; font-weight: 800;
-  color: white; letter-spacing: -0.5px;
-}
-.login-eyebrow {
-  font-size: 11px; font-weight: 600;
-  letter-spacing: 3px; text-transform: uppercase;
-  color: var(--blue-light); margin-bottom: 10px;
-}
-.login-title {
-  font-family: 'Syne', sans-serif;
-  font-size: 28px; font-weight: 800;
-  color: white; line-height: 1.15;
-  margin-bottom: 8px;
-}
-.login-sub {
-  font-size: 14px; color: rgba(255,255,255,0.45);
-  line-height: 1.6; margin-bottom: 36px;
-}
-.login-label {
-  display: block;
-  font-size: 12px; font-weight: 600;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 1px; text-transform: uppercase;
-  margin-bottom: 8px;
-}
+.login-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 36px; }
+.login-logo-dot { width: 10px; height: 10px; background: var(--blue-bright); border-radius: 50%; }
+.login-logo-text { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 800; color: white; }
+.login-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 10px; }
+.login-title { font-family: 'Syne', sans-serif; font-size: 30px; font-weight: 800; color: white; line-height: 1.1; margin-bottom: 8px; }
+.login-sub { font-size: 14px; color: rgba(255,255,255,0.4); line-height: 1.6; margin-bottom: 36px; }
+.login-label { display: block; font-size: 11px; font-weight: 600; color: rgba(255,255,255,0.45); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; }
 .login-input {
-  width: 100%;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 10px;
-  padding: 14px 18px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px; color: white;
-  outline: none;
-  transition: border-color 0.2s, background 0.2s;
-  margin-bottom: 20px;
-  letter-spacing: 2px;
+  width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px; padding: 14px 18px; font-family: 'DM Sans', sans-serif;
+  font-size: 15px; color: white; outline: none; transition: border-color 0.2s;
+  margin-bottom: 20px; letter-spacing: 2px;
 }
 .login-input::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 0; }
-.login-input:focus {
-  border-color: var(--blue-bright);
-  background: rgba(37,99,235,0.08);
-}
+.login-input:focus { border-color: var(--blue-bright); }
 .login-btn {
-  width: 100%;
-  background: var(--blue-bright);
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 15px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 15px; font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.15s;
+  width: 100%; background: var(--blue-bright); color: white; border: none;
+  border-radius: 10px; padding: 15px; font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 600; cursor: pointer; transition: background 0.2s;
 }
-.login-btn:hover { background: var(--blue-mid); transform: translateY(-1px); }
-.login-error {
-  display: none;
-  margin-top: 14px;
-  font-size: 13px;
-  color: #FCA5A5;
-  text-align: center;
-}
-
-/* RESOURCES SCREEN */
-#resources-screen { display: none; }
+.login-btn:hover { background: var(--blue-mid); }
+.login-error { display: none; margin-top: 14px; font-size: 13px; color: #FCA5A5; text-align: center; }
 
 /* NAV */
+#resources-screen { display: none; }
 nav {
-  position: fixed; width: 100%; z-index: 1000;
-  padding: 0 5%;
-  background: rgba(11,31,58,0.97);
-  backdrop-filter: blur(12px);
+  position: fixed; width: 100%; z-index: 1000; padding: 0 5%;
+  background: rgba(11,31,58,0.98); backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 rgba(0,0,0,0.3);
 }
-.nav-inner {
-  display: flex; justify-content: space-between; align-items: center;
-  max-width: 1200px; margin: auto; padding: 14px 0;
-}
-.logo {
-  display: flex; align-items: center; gap: 10px;
-  text-decoration: none;
-}
+.nav-inner { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: auto; padding: 14px 0; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
 .logo-dot { width: 8px; height: 8px; background: var(--blue-bright); border-radius: 50%; }
-.logo-text { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: white; letter-spacing: -0.5px; }
+.logo-text { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: white; }
 .nav-right { display: flex; align-items: center; gap: 20px; }
-.nav-back {
-  color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 500;
-  text-decoration: none; transition: color 0.2s;
-}
+.nav-tag { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--blue-light); background: rgba(96,165,250,0.1); border: 1px solid rgba(96,165,250,0.2); padding: 4px 12px; border-radius: 20px; }
+.nav-back { color: rgba(255,255,255,0.55); font-size: 13px; font-weight: 500; text-decoration: none; transition: color 0.2s; }
 .nav-back:hover { color: white; }
-.nav-tag {
-  font-size: 11px; font-weight: 600; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--blue-light);
-  background: rgba(96,165,250,0.1);
-  border: 1px solid rgba(96,165,250,0.2);
-  padding: 4px 12px; border-radius: 20px;
-}
-
-/* HERO */
-.resources-hero {
-  background: linear-gradient(160deg, var(--blue-deep), #0d2444);
-  padding: 140px 5% 80px;
-  position: relative; overflow: hidden;
-}
-.resources-hero::after {
-  content: '';
-  position: absolute; bottom: -100px; right: -100px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);
-  border-radius: 50%;
-}
-.resources-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
-.eyebrow {
-  font-size: 11px; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--blue-light); margin-bottom: 14px;
-}
-.hero-title {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(36px, 4vw, 54px);
-  font-weight: 800; color: white;
-  line-height: 1.05; margin-bottom: 16px;
-}
-.hero-sub {
-  font-size: 17px; color: rgba(255,255,255,0.5);
-  line-height: 1.7; max-width: 560px;
-}
-
-/* MAIN CONTENT */
-.resources-main {
-  max-width: 1100px; margin: 0 auto;
-  padding: 80px 5%;
-}
-
-/* SECTION HEADER */
-.section-header {
-  display: flex; align-items: center; gap: 16px;
-  margin-bottom: 24px; padding-bottom: 16px;
-  border-bottom: 2px solid var(--blue-bright);
-}
-.section-header-label {
-  font-size: 11px; font-weight: 600; letter-spacing: 3px;
-  text-transform: uppercase; color: var(--blue-bright);
-}
-.section-header h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: 20px; font-weight: 800; color: var(--ink);
-}
-.section-block { margin-bottom: 64px; }
-
-/* RESOURCE CARDS */
-.resource-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 16px;
-}
-.resource-card {
-  background: white;
-  border: 1px solid var(--border-light);
-  border-radius: 14px;
-  padding: 28px;
-  transition: box-shadow 0.2s, transform 0.2s;
-  position: relative;
-}
-.resource-card:hover {
-  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-  transform: translateY(-2px);
-}
-.resource-card-tag {
-  display: inline-block;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  padding: 3px 10px; border-radius: 20px;
-  margin-bottom: 14px;
-}
-.tag-assessment { background: #EFF6FF; color: var(--blue-bright); }
-.tag-training { background: #F0FFF4; color: #059669; }
-.tag-platform { background: #FFF7ED; color: #D97706; }
-.tag-internal { background: #F5F3FF; color: #7C3AED; }
-.tag-coming { background: #F9FAFB; color: var(--muted); }
-
-.resource-card h3 {
-  font-family: 'Syne', sans-serif;
-  font-size: 16px; font-weight: 800;
-  color: var(--ink); margin-bottom: 8px;
-}
-.resource-card p {
-  font-size: 13px; color: var(--muted);
-  line-height: 1.6; margin-bottom: 20px;
-}
-.resource-card-footer {
-  display: flex; align-items: center; justify-content: space-between;
-}
-.resource-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 13px; font-weight: 600;
-  color: var(--blue-bright); text-decoration: none;
-  transition: gap 0.2s;
-}
-.resource-link:hover { gap: 10px; }
-.resource-link svg { flex-shrink: 0; }
-.resource-status {
-  font-size: 11px; font-weight: 600;
-  color: var(--muted); background: #F3F4F6;
-  padding: 3px 10px; border-radius: 20px;
-}
-.resource-status.live {
-  color: #059669; background: #F0FFF4;
-  border: 1px solid #BBF7D0;
-}
-.resource-status.wip {
-  color: #D97706; background: #FFFBEB;
-  border: 1px solid #FDE68A;
-}
-
-/* UPLOAD AREA */
-.upload-area {
-  border: 2px dashed #D1D5DB;
-  border-radius: 14px; padding: 40px;
-  text-align: center; background: white;
-  transition: border-color 0.2s, background 0.2s;
-  cursor: pointer;
-}
-.upload-area:hover { border-color: var(--blue-bright); background: #EFF6FF; }
-.upload-area p { font-size: 14px; color: var(--muted); margin-top: 10px; }
-.upload-area strong { color: var(--blue-bright); }
-
-/* LOGOUT */
-.logout-btn {
-  background: none; border: 1px solid rgba(255,255,255,0.2);
-  color: rgba(255,255,255,0.5); padding: 6px 14px;
-  border-radius: 6px; font-size: 12px; font-weight: 600;
-  cursor: pointer; font-family: 'DM Sans', sans-serif;
-  transition: color 0.2s, border-color 0.2s;
-}
+.logout-btn { background: none; border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.45); padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
 .logout-btn:hover { color: white; border-color: rgba(255,255,255,0.4); }
 
-/* FOOTER */
-footer {
-  background: var(--ink); color: white;
-  padding: 32px 5%; text-align: center;
-}
+/* HERO */
+.r-hero { background: linear-gradient(160deg, var(--blue-deep) 0%, #0d2444 100%); padding: 140px 5% 80px; }
+.r-hero-inner { max-width: 1100px; margin: 0 auto; }
+.eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 14px; }
+.r-hero h1 { font-family: 'Syne', sans-serif; font-size: clamp(34px, 4vw, 52px); font-weight: 800; color: white; line-height: 1.05; margin-bottom: 16px; }
+.r-hero p { font-size: 17px; color: rgba(255,255,255,0.45); line-height: 1.7; max-width: 600px; }
+
+/* ENGAGEMENT FLOW */
+.flow-bar { background: var(--blue-deep); padding: 40px 5%; }
+.flow-inner { max-width: 1100px; margin: 0 auto; }
+.flow-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-light); margin-bottom: 24px; }
+.flow-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; position: relative; }
+.flow-steps::before { content: ''; position: absolute; top: 19px; left: 5%; right: 5%; height: 2px; background: rgba(96,165,250,0.3); z-index: 0; }
+.flow-step { text-align: center; position: relative; z-index: 1; padding: 0 12px; }
+.flow-num { width: 38px; height: 38px; background: var(--blue-bright); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 800; margin: 0 auto 12px; }
+.flow-name { font-size: 12px; font-weight: 600; color: white; line-height: 1.3; }
+.flow-week { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; letter-spacing: 0.5px; }
+
+/* MAIN */
+.r-main { max-width: 1100px; margin: 0 auto; padding: 80px 5%; }
+.r-section { margin-bottom: 72px; }
+.section-head { margin-bottom: 28px; padding-bottom: 18px; border-bottom: 2px solid var(--blue-bright); }
+.section-phase { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 6px; }
+.section-head h2 { font-family: 'Syne', sans-serif; font-size: 21px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+.section-head p { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 680px; }
+
+/* CARDS */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.r-card { background: white; border: 1px solid var(--border); border-radius: 14px; padding: 28px; display: flex; flex-direction: column; transition: box-shadow 0.2s, transform 0.2s; }
+.r-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.card-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 16px; gap: 12px; }
+.card-icon { width: 40px; height: 40px; background: #EFF6FF; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.card-tag { font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; white-space: nowrap; }
+.tag-d  { background: #EFF6FF; color: var(--blue-bright); }
+.tag-f  { background: #F0FFF4; color: #059669; }
+.tag-p  { background: #FFF7ED; color: #D97706; }
+.tag-g  { background: #F5F3FF; color: #7C3AED; }
+.tag-t  { background: #FFF1F2; color: #E11D48; }
+.r-card h3 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 800; color: var(--ink); margin-bottom: 8px; }
+.r-card p { font-size: 13px; color: var(--muted); line-height: 1.65; flex: 1; margin-bottom: 20px; }
+.card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.r-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue-bright); text-decoration: none; }
+.r-link:hover { gap: 10px; }
+.badge { font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 20px; letter-spacing: 0.5px; }
+.b-live { color: #059669; background: #F0FFF4; border: 1px solid #BBF7D0; }
+.b-wip  { color: #D97706; background: #FFFBEB; border: 1px solid #FDE68A; }
+.b-soon { color: var(--muted); background: #F3F4F6; }
+.placeholder-note { font-size: 12px; color: var(--muted); }
+
+footer { background: var(--ink); color: white; padding: 32px 5%; text-align: center; }
 footer p { font-size: 13px; opacity: 0.3; }
+
+@media(max-width:700px) {
+  .flow-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .flow-steps::before { display: none; }
+  .card-grid { grid-template-columns: 1fr; }
+  .login-card { padding: 40px 28px; }
+}
 </style>
 </head>
 <body>
 
 <!-- LOGIN SCREEN -->
-<div id="login-screen">
+<div id="login-screen" style="display:flex;">
   <div class="login-card">
     <div class="login-logo">
       <div class="login-logo-dot"></div>
@@ -328,16 +151,16 @@ footer p { font-size: 13px; opacity: 0.3; }
     </div>
     <div class="login-eyebrow">Internal Access</div>
     <h1 class="login-title">Resource<br>Library</h1>
-    <p class="login-sub">This area is for internal use and authorised clients only. Enter your access code to continue.</p>
+    <p class="login-sub">Working tools for Valyntra engagements. Enter your access code to continue.</p>
     <label class="login-label" for="password">Access Code</label>
     <input type="password" id="password" class="login-input" placeholder="Enter access code" autocomplete="off">
     <button class="login-btn" onclick="checkPassword()">Access Resources</button>
-    <div class="login-error" id="login-error">Incorrect access code. Please try again.</div>
+    <div class="login-error" id="login-error">Incorrect access code. Try again.</div>
   </div>
 </div>
 
 <!-- RESOURCES SCREEN -->
-<div id="resources-screen">
+<div id="resources-screen" style="display:none;">
 
   <nav>
     <div class="nav-inner">
@@ -347,177 +170,383 @@ footer p { font-size: 13px; opacity: 0.3; }
       </a>
       <div class="nav-right">
         <span class="nav-tag">Internal · Restricted</span>
-        <a href="index.html" class="nav-back">← Back to Site</a>
+        <a href="index.html" class="nav-back">Back to Site</a>
         <button class="logout-btn" onclick="logout()">Log Out</button>
       </div>
     </div>
   </nav>
 
-  <div class="resources-hero">
-    <div class="resources-hero-inner">
+  <div class="r-hero">
+    <div class="r-hero-inner">
       <div class="eyebrow">Internal Resource Library</div>
-      <h1 class="hero-title">Tools, Frameworks<br>&amp; Operating Assets</h1>
-      <p class="hero-sub">Internal working library for Valyntra engagements — assessment tools, delivery frameworks, PRISM development materials, and client-facing assets.</p>
+      <h1>Engagement Tools<br>&amp; Working Assets</h1>
+      <p>Everything needed to run a Valyntra engagement — from first diagnostic call through to performance monitoring. Build here first, share with clients when ready.</p>
     </div>
   </div>
 
-  <div class="resources-main">
-
-    <!-- ASSESSMENTS -->
-    <div class="section-block">
-      <div class="section-header">
-        <div>
-          <div class="section-header-label">Diagnostic Tools</div>
-          <h2>Assessments</h2>
+  <!-- ENGAGEMENT FLOW BAR -->
+  <div class="flow-bar">
+    <div class="flow-inner">
+      <div class="flow-label">The Four-Phase Engagement Model</div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-num">1</div>
+          <div class="flow-name">Advisory &amp; Diagnostic</div>
+          <div class="flow-week">Week 1</div>
         </div>
-      </div>
-      <div class="resource-grid">
-        <div class="resource-card">
-          <span class="resource-card-tag tag-assessment">Assessment</span>
-          <h3>AI Readiness Assessment</h3>
-          <p>Structured diagnostic for MedTech and commercial organizations — maps current state, identifies automation opportunities, and scores AI readiness across five dimensions.</p>
-          <div class="resource-card-footer">
-            <a href="#" class="resource-link">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-            <span class="resource-status live">Live</span>
-          </div>
+        <div class="flow-step">
+          <div class="flow-num">2</div>
+          <div class="flow-name">Automation Opportunity Mapping</div>
+          <div class="flow-week">Week 1–2</div>
         </div>
-        <div class="resource-card">
-          <span class="resource-card-tag tag-coming">Coming Soon</span>
-          <h3>Commercial Execution Diagnostic</h3>
-          <p>Deep-dive assessment of GTM alignment, channel performance, and revenue visibility gaps — designed as a precursor to a full Valyntra engagement.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">In development</span>
-            <span class="resource-status wip">In Progress</span>
-          </div>
+        <div class="flow-step">
+          <div class="flow-num">3</div>
+          <div class="flow-name">Financial Impact Modeling</div>
+          <div class="flow-week">Week 2</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">4</div>
+          <div class="flow-name">Implementation Roadmap &amp; Provider Matching</div>
+          <div class="flow-week">Week 3</div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- TRAINING & FRAMEWORKS -->
-    <div class="section-block">
-      <div class="section-header">
-        <div>
-          <div class="section-header-label">Methodology</div>
-          <h2>Training Materials &amp; Frameworks</h2>
-        </div>
+  <div class="r-main">
+
+    <!-- PHASE 1 — ADVISORY & DIAGNOSTIC -->
+    <div class="r-section">
+      <div class="section-head">
+        <div class="section-phase">Phase 1 · Week 1</div>
+        <h2>Advisory &amp; Diagnostic</h2>
+        <p>Tools for scoping, assessing, and presenting findings at the start of every engagement. The diagnostic is the product — it surfaces the exact problem before any solution is scoped.</p>
       </div>
-      <div class="resource-grid">
-        <div class="resource-card">
-          <span class="resource-card-tag tag-training">Training</span>
+      <div class="card-grid">
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5v4l7 7 4-4-7-7z"/><path d="M12 12l-8 8"/><path d="M16 8l2-2"/><path d="M3 21h18"/></svg>
+            </div>
+            <span class="card-tag tag-d">Assessment</span>
+          </div>
+          <h3>AI Readiness Assessment</h3>
+          <p>Structured five-dimension diagnostic for MedTech and commercially complex organizations — maps current state across operations, data, people, process, and strategy. Identifies where AI creates the most leverage before any engagement is scoped.</p>
+          <div class="card-foot">
+            <a href="#" class="r-link">Open Tool
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <span class="badge b-live">Live</span>
+          </div>
+        </div>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <span class="card-tag tag-d">Diagnostic</span>
+          </div>
+          <h3>Commercial Execution Diagnostic</h3>
+          <p>Deep-dive into GTM alignment, OEM-distributor channel gaps, sales cycle friction, and revenue visibility. Designed as the qualifying step before a full Valyntra engagement — surfaces where execution is actually breaking down.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">In development</span>
+            <span class="badge b-wip">In Progress</span>
+          </div>
+        </div>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563EB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <span class="card-tag tag-d">Template</span>
+          </div>
+          <h3>Discovery Call Framework</h3>
+          <p>Structured question set for the first client conversation — identifies pain points, existing tools, team structure, data availability, and readiness signals. Output feeds directly into diagnostic scope and proposal framing.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PHASE 2 — AUTOMATION OPPORTUNITY MAPPING -->
+    <div class="r-section">
+      <div class="section-head">
+        <div class="section-phase">Phase 2 · Week 1–2</div>
+        <h2>Automation Opportunity Mapping</h2>
+        <p>Frameworks for identifying, scoring, and presenting automation candidates. The output is a prioritized shortlist — ranked by feasibility, financial impact, and complexity — not a generic list of possibilities.</p>
+      </div>
+      <div class="card-grid">
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg>
+            </div>
+            <span class="card-tag tag-f">Framework</span>
+          </div>
+          <h3>Automation Opportunity Scorecard</h3>
+          <p>Prioritization matrix that ranks automation candidates by implementation feasibility, financial upside, and complexity. Produces the ranked shortlist that drives Phase 3 financial modeling and Phase 4 roadmap sequencing.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
+          </div>
+        </div>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+            </div>
+            <span class="card-tag tag-f">Template</span>
+          </div>
+          <h3>Current-State Process Map Template</h3>
+          <p>Visual framework for documenting client workflows end-to-end — captures handoffs, manual steps, data gaps, and decision points. Identifies where agentic AI intervention creates the highest leverage with least disruption.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
+          </div>
+        </div>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </div>
+            <span class="card-tag tag-f">Training</span>
+          </div>
           <h3>Agentic AI for Commercial Leaders</h3>
-          <p>Internal training framework — explains agentic AI concepts in commercial operations language, with MedTech-specific examples and workflow illustrations.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">Add document</span>
-            <span class="resource-status">Placeholder</span>
+          <p>Internal training framework that explains agentic AI in commercial operations language — MedTech-specific examples covering revenue forecasting, channel management, distributor execution, and pipeline intelligence. Prep for client conversations.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
           </div>
         </div>
-        <div class="resource-card">
-          <span class="resource-card-tag tag-training">Framework</span>
+
+      </div>
+    </div>
+
+    <!-- PHASE 3 — FINANCIAL IMPACT MODELING -->
+    <div class="r-section">
+      <div class="section-head">
+        <div class="section-phase">Phase 3 · Week 2</div>
+        <h2>Financial Impact Modeling</h2>
+        <p>Tools for quantifying the return on identified opportunities. Every Valyntra deliverable expresses impact in dollars and percentages — not vague operational language. This is what makes the engagement fundable internally.</p>
+      </div>
+      <div class="card-grid">
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><line x1="2" y1="20" x2="22" y2="20"/></svg>
+            </div>
+            <span class="card-tag tag-p">Model</span>
+          </div>
+          <h3>ROI Estimation Model</h3>
+          <p>Structured approach for estimating financial return across labor savings, throughput gains, error reduction, and revenue impact. Produces the quantified projections that anchor the implementation business case for client leadership.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
+          </div>
+        </div>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            </div>
+            <span class="card-tag tag-p">Framework</span>
+          </div>
           <h3>GTM Alignment Framework</h3>
-          <p>Structured methodology for aligning OEM strategy with distributor execution — channel mapping, KPI design, and territory penetration models.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">Add document</span>
-            <span class="resource-status">Placeholder</span>
+          <p>Maps current commercial execution against best-practice standards for OEM-distributor alignment, channel KPI design, and revenue visibility. Quantifies the gap — and the financial value of closing it — in terms leadership can act on.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
           </div>
         </div>
-        <div class="resource-card">
-          <span class="resource-card-tag tag-training">Delivery</span>
+
+      </div>
+    </div>
+
+    <!-- PHASE 4 — IMPLEMENTATION ROADMAP & PROVIDER MATCHING -->
+    <div class="r-section">
+      <div class="section-head">
+        <div class="section-phase">Phase 4 · Week 3</div>
+        <h2>Implementation Roadmap &amp; Provider Matching</h2>
+        <p>Tools for building the executable plan and matching clients to the right providers from the vetted 49-firm network. The roadmap is vendor-neutral — technology follows strategy, not the other way around.</p>
+      </div>
+      <div class="card-grid">
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <span class="card-tag tag-g">Roadmap</span>
+          </div>
           <h3>Engagement Delivery Playbook</h3>
-          <p>Internal operating manual for running Valyntra client engagements — onboarding, diagnostic phases, deliverable templates, and client communication standards.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">Add document</span>
-            <span class="resource-status">Placeholder</span>
+          <p>Internal operating manual covering onboarding, diagnostic phases, deliverable standards, stakeholder communication, and the phased implementation handoff. The reference for running a consistent, professional Valyntra engagement.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
           </div>
         </div>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <span class="card-tag tag-g">Reference</span>
+          </div>
+          <h3>Provider Network Reference Guide</h3>
+          <p>Evaluation criteria and landscape overview across the 49-firm vetted network — spanning global SI firms, ML specialists, cloud platforms, and nearshore engineering. Maps provider capabilities against client need profiles for accurate matching.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
     <!-- PRISM -->
-    <div class="section-block">
-      <div class="section-header">
-        <div>
-          <div class="section-header-label">Platform Development</div>
-          <h2>PRISM</h2>
-        </div>
+    <div class="r-section">
+      <div class="section-head">
+        <div class="section-phase">Platform</div>
+        <h2>PRISM</h2>
+        <p>Development materials, demo assets, and platform access for PRISM — the agentic AI revenue intelligence platform designed to give commercial leaders 6–12 months of advance revenue visibility.</p>
       </div>
-      <div class="resource-grid">
-        <div class="resource-card">
-          <span class="resource-card-tag tag-platform">POC</span>
-          <h3>PRISM — POC Documentation</h3>
-          <p>Architecture overview, data model, and agentic workflow design for the PRISM revenue intelligence platform. Internal build reference.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">Add document</span>
-            <span class="resource-status wip">In Progress</span>
+      <div class="card-grid">
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <span class="card-tag tag-p">POC</span>
+          </div>
+          <h3>PRISM POC Documentation</h3>
+          <p>Architecture overview, agentic workflow design, and data model for PRISM. Internal build reference — covers how the platform ingests commercial signals, surfaces forward-looking revenue risk, and delivers 6–12 month visibility.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">In development</span>
+            <span class="badge b-wip">In Progress</span>
           </div>
         </div>
-        <div class="resource-card">
-          <span class="resource-card-tag tag-platform">Demo</span>
-          <h3>PRISM — Client Demo Script</h3>
-          <p>Structured walkthrough for presenting PRISM to prospective clients and investors — key messages, objection handling, and next step framing.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">Add document</span>
-            <span class="resource-status">Placeholder</span>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <span class="card-tag tag-p">Demo</span>
+          </div>
+          <h3>PRISM Client Demo Script</h3>
+          <p>Structured walkthrough for presenting PRISM to prospective clients and investors — covers the revenue visibility narrative, live platform walkthrough, key objection responses, and next step framing.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
           </div>
         </div>
-        <div class="resource-card">
-          <span class="resource-card-tag tag-platform">Platform</span>
-          <h3>PRISM — Live Platform</h3>
-          <p>Access the PRISM platform directly at prism-health.ai.</p>
-          <div class="resource-card-footer">
-            <a href="https://prism-health.ai" target="_blank" class="resource-link">Open Platform <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-            <span class="resource-status live">Live</span>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            </div>
+            <span class="card-tag tag-p">Live</span>
+          </div>
+          <h3>PRISM Live Platform</h3>
+          <p>Direct access to the PRISM platform at prism-health.ai.</p>
+          <div class="card-foot">
+            <a href="https://prism-health.ai" target="_blank" class="r-link">Open Platform
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <span class="badge b-live">Live</span>
           </div>
         </div>
+
       </div>
     </div>
 
-    <!-- CLIENT ASSETS -->
-    <div class="section-block">
-      <div class="section-header">
-        <div>
-          <div class="section-header-label">GTM</div>
-          <h2>Client-Facing Assets</h2>
-        </div>
+    <!-- CLIENT-FACING ASSETS -->
+    <div class="r-section">
+      <div class="section-head">
+        <div class="section-phase">Go-To-Market</div>
+        <h2>Client-Facing Assets</h2>
+        <p>Polished materials for prospecting, proposals, and investor conversations. Build and refine internally — share selectively when ready.</p>
       </div>
-      <div class="resource-grid">
-        <div class="resource-card">
-          <span class="resource-card-tag tag-internal">GTM</span>
+      <div class="card-grid">
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <span class="card-tag tag-t">GTM</span>
+          </div>
           <h3>Valyntra One-Pager</h3>
-          <p>Concise overview of Valyntra's value proposition, services, and engagement model — designed to share with prospective clients after initial contact.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">Add document</span>
-            <span class="resource-status">Placeholder</span>
+          <p>Concise overview of Valyntra's value proposition, four-phase engagement model, and commercial outcomes. Designed to share after an initial discovery call — bridges interest to a formal diagnostic engagement.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
           </div>
         </div>
-        <div class="resource-card">
-          <span class="resource-card-tag tag-internal">Investor</span>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <span class="card-tag tag-t">Investor</span>
+          </div>
           <h3>Investor Briefing Deck</h3>
-          <p>Investment thesis, market sizing, pipeline data, PRISM platform overview, and founder background — for strategic partnership and capital discussions.</p>
-          <div class="resource-card-footer">
-            <span style="font-size:13px;color:var(--muted);">Add document</span>
-            <span class="resource-status">Placeholder</span>
+          <p>Investment thesis, market sizing, $34M+ mapped pipeline, PRISM platform overview, provider network, and founder background. For strategic partnership and capital deployment conversations.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
           </div>
         </div>
+
+        <div class="r-card">
+          <div class="card-top">
+            <div class="card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <span class="card-tag tag-t">Outreach</span>
+          </div>
+          <h3>Outreach &amp; Follow-Up Templates</h3>
+          <p>Email and LinkedIn message templates for first outreach, post-assessment follow-up, and investor contact — aligned to the Valyntra commercial voice and positioning.</p>
+          <div class="card-foot">
+            <span class="placeholder-note">Add document</span>
+            <span class="badge b-soon">Placeholder</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
-  </div>
+  </div><!-- end r-main -->
 
   <footer>
     <p>Valyntra LLC · Internal Resource Library · Restricted Access</p>
   </footer>
 
-</div>
+</div><!-- end resources-screen -->
 
 <script>
-  // Simple password gate — change this to your preferred access code
   const ACCESS_CODE = 'valyntra2025';
 
   function checkPassword() {
     const input = document.getElementById('password').value;
     const error = document.getElementById('login-error');
     if (input === ACCESS_CODE) {
-      sessionStorage.setItem('vr_auth', 'true');
+      try { sessionStorage.setItem('vr_auth', 'true'); } catch(e) {}
       document.getElementById('login-screen').style.display = 'none';
       document.getElementById('resources-screen').style.display = 'block';
       error.style.display = 'none';
@@ -529,22 +558,22 @@ footer p { font-size: 13px; opacity: 0.3; }
   }
 
   function logout() {
-    sessionStorage.removeItem('vr_auth');
+    try { sessionStorage.removeItem('vr_auth'); } catch(e) {}
     document.getElementById('resources-screen').style.display = 'none';
     document.getElementById('login-screen').style.display = 'flex';
     document.getElementById('password').value = '';
   }
 
-  // Allow Enter key on password field
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('password').addEventListener('keydown', (e) => {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('password').addEventListener('keydown', function(e) {
       if (e.key === 'Enter') checkPassword();
     });
-    // Auto-unlock if already authenticated this session
-    if (sessionStorage.getItem('vr_auth') === 'true') {
-      document.getElementById('login-screen').style.display = 'none';
-      document.getElementById('resources-screen').style.display = 'block';
-    }
+    try {
+      if (sessionStorage.getItem('vr_auth') === 'true') {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('resources-screen').style.display = 'block';
+      }
+    } catch(e) {}
   });
 </script>
 </body>
