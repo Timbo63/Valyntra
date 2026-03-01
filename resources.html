@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources · Valyntra</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0A0F1E;
+  --blue-deep: #0B1F3A;
+  --blue-mid: #1E3A8A;
+  --blue-bright: #2563EB;
+  --blue-light: #60A5FA;
+  --cream: #F8F6F1;
+  --muted: #6B7280;
+  --border-light: rgba(0,0,0,0.07);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; color: var(--ink); background: var(--cream); min-height: 100vh; }
+
+/* LOGIN SCREEN */
+#login-screen {
+  min-height: 100vh;
+  background: var(--blue-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+#login-screen::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+}
+#login-screen::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; left: -150px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(96,165,250,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.login-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 20px;
+  padding: 52px 48px;
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(12px);
+}
+.login-logo {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 36px;
+}
+.login-logo-dot {
+  width: 10px; height: 10px;
+  background: var(--blue-bright);
+  border-radius: 50%;
+}
+.login-logo-text {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800;
+  color: white; letter-spacing: -0.5px;
+}
+.login-eyebrow {
+  font-size: 11px; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--blue-light); margin-bottom: 10px;
+}
+.login-title {
+  font-family: 'Syne', sans-serif;
+  font-size: 28px; font-weight: 800;
+  color: white; line-height: 1.15;
+  margin-bottom: 8px;
+}
+.login-sub {
+  font-size: 14px; color: rgba(255,255,255,0.45);
+  line-height: 1.6; margin-bottom: 36px;
+}
+.login-label {
+  display: block;
+  font-size: 12px; font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.login-input {
+  width: 100%;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; color: white;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.login-input::placeholder { color: rgba(255,255,255,0.2); letter-spacing: 0; }
+.login-input:focus {
+  border-color: var(--blue-bright);
+  background: rgba(37,99,235,0.08);
+}
+.login-btn {
+  width: 100%;
+  background: var(--blue-bright);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px; font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.login-btn:hover { background: var(--blue-mid); transform: translateY(-1px); }
+.login-error {
+  display: none;
+  margin-top: 14px;
+  font-size: 13px;
+  color: #FCA5A5;
+  text-align: center;
+}
+
+/* RESOURCES SCREEN */
+#resources-screen { display: none; }
+
+/* NAV */
+nav {
+  position: fixed; width: 100%; z-index: 1000;
+  padding: 0 5%;
+  background: rgba(11,31,58,0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.3);
+}
+.nav-inner {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: 1200px; margin: auto; padding: 14px 0;
+}
+.logo {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none;
+}
+.logo-dot { width: 8px; height: 8px; background: var(--blue-bright); border-radius: 50%; }
+.logo-text { font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 800; color: white; letter-spacing: -0.5px; }
+.nav-right { display: flex; align-items: center; gap: 20px; }
+.nav-back {
+  color: rgba(255,255,255,0.6); font-size: 13px; font-weight: 500;
+  text-decoration: none; transition: color 0.2s;
+}
+.nav-back:hover { color: white; }
+.nav-tag {
+  font-size: 11px; font-weight: 600; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--blue-light);
+  background: rgba(96,165,250,0.1);
+  border: 1px solid rgba(96,165,250,0.2);
+  padding: 4px 12px; border-radius: 20px;
+}
+
+/* HERO */
+.resources-hero {
+  background: linear-gradient(160deg, var(--blue-deep), #0d2444);
+  padding: 140px 5% 80px;
+  position: relative; overflow: hidden;
+}
+.resources-hero::after {
+  content: '';
+  position: absolute; bottom: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(37,99,235,0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.resources-hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--blue-light); margin-bottom: 14px;
+}
+.hero-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 800; color: white;
+  line-height: 1.05; margin-bottom: 16px;
+}
+.hero-sub {
+  font-size: 17px; color: rgba(255,255,255,0.5);
+  line-height: 1.7; max-width: 560px;
+}
+
+/* MAIN CONTENT */
+.resources-main {
+  max-width: 1100px; margin: 0 auto;
+  padding: 80px 5%;
+}
+
+/* SECTION HEADER */
+.section-header {
+  display: flex; align-items: center; gap: 16px;
+  margin-bottom: 24px; padding-bottom: 16px;
+  border-bottom: 2px solid var(--blue-bright);
+}
+.section-header-label {
+  font-size: 11px; font-weight: 600; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--blue-bright);
+}
+.section-header h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 20px; font-weight: 800; color: var(--ink);
+}
+.section-block { margin-bottom: 64px; }
+
+/* RESOURCE CARDS */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.resource-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  padding: 28px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+}
+.resource-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+.resource-card-tag {
+  display: inline-block;
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 20px;
+  margin-bottom: 14px;
+}
+.tag-assessment { background: #EFF6FF; color: var(--blue-bright); }
+.tag-training { background: #F0FFF4; color: #059669; }
+.tag-platform { background: #FFF7ED; color: #D97706; }
+.tag-internal { background: #F5F3FF; color: #7C3AED; }
+.tag-coming { background: #F9FAFB; color: var(--muted); }
+
+.resource-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; font-weight: 800;
+  color: var(--ink); margin-bottom: 8px;
+}
+.resource-card p {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.6; margin-bottom: 20px;
+}
+.resource-card-footer {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.resource-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600;
+  color: var(--blue-bright); text-decoration: none;
+  transition: gap 0.2s;
+}
+.resource-link:hover { gap: 10px; }
+.resource-link svg { flex-shrink: 0; }
+.resource-status {
+  font-size: 11px; font-weight: 600;
+  color: var(--muted); background: #F3F4F6;
+  padding: 3px 10px; border-radius: 20px;
+}
+.resource-status.live {
+  color: #059669; background: #F0FFF4;
+  border: 1px solid #BBF7D0;
+}
+.resource-status.wip {
+  color: #D97706; background: #FFFBEB;
+  border: 1px solid #FDE68A;
+}
+
+/* UPLOAD AREA */
+.upload-area {
+  border: 2px dashed #D1D5DB;
+  border-radius: 14px; padding: 40px;
+  text-align: center; background: white;
+  transition: border-color 0.2s, background 0.2s;
+  cursor: pointer;
+}
+.upload-area:hover { border-color: var(--blue-bright); background: #EFF6FF; }
+.upload-area p { font-size: 14px; color: var(--muted); margin-top: 10px; }
+.upload-area strong { color: var(--blue-bright); }
+
+/* LOGOUT */
+.logout-btn {
+  background: none; border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.5); padding: 6px 14px;
+  border-radius: 6px; font-size: 12px; font-weight: 600;
+  cursor: pointer; font-family: 'DM Sans', sans-serif;
+  transition: color 0.2s, border-color 0.2s;
+}
+.logout-btn:hover { color: white; border-color: rgba(255,255,255,0.4); }
+
+/* FOOTER */
+footer {
+  background: var(--ink); color: white;
+  padding: 32px 5%; text-align: center;
+}
+footer p { font-size: 13px; opacity: 0.3; }
+</style>
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="login-screen">
+  <div class="login-card">
+    <div class="login-logo">
+      <div class="login-logo-dot"></div>
+      <div class="login-logo-text">Valyntra</div>
+    </div>
+    <div class="login-eyebrow">Internal Access</div>
+    <h1 class="login-title">Resource<br>Library</h1>
+    <p class="login-sub">This area is for internal use and authorised clients only. Enter your access code to continue.</p>
+    <label class="login-label" for="password">Access Code</label>
+    <input type="password" id="password" class="login-input" placeholder="Enter access code" autocomplete="off">
+    <button class="login-btn" onclick="checkPassword()">Access Resources</button>
+    <div class="login-error" id="login-error">Incorrect access code. Please try again.</div>
+  </div>
+</div>
+
+<!-- RESOURCES SCREEN -->
+<div id="resources-screen">
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-dot"></div>
+        <div class="logo-text">Valyntra</div>
+      </a>
+      <div class="nav-right">
+        <span class="nav-tag">Internal · Restricted</span>
+        <a href="index.html" class="nav-back">← Back to Site</a>
+        <button class="logout-btn" onclick="logout()">Log Out</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="resources-hero">
+    <div class="resources-hero-inner">
+      <div class="eyebrow">Internal Resource Library</div>
+      <h1 class="hero-title">Tools, Frameworks<br>&amp; Operating Assets</h1>
+      <p class="hero-sub">Internal working library for Valyntra engagements — assessment tools, delivery frameworks, PRISM development materials, and client-facing assets.</p>
+    </div>
+  </div>
+
+  <div class="resources-main">
+
+    <!-- ASSESSMENTS -->
+    <div class="section-block">
+      <div class="section-header">
+        <div>
+          <div class="section-header-label">Diagnostic Tools</div>
+          <h2>Assessments</h2>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="resource-card-tag tag-assessment">Assessment</span>
+          <h3>AI Readiness Assessment</h3>
+          <p>Structured diagnostic for MedTech and commercial organizations — maps current state, identifies automation opportunities, and scores AI readiness across five dimensions.</p>
+          <div class="resource-card-footer">
+            <a href="#" class="resource-link">Open Tool <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+            <span class="resource-status live">Live</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <span class="resource-card-tag tag-coming">Coming Soon</span>
+          <h3>Commercial Execution Diagnostic</h3>
+          <p>Deep-dive assessment of GTM alignment, channel performance, and revenue visibility gaps — designed as a precursor to a full Valyntra engagement.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">In development</span>
+            <span class="resource-status wip">In Progress</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TRAINING & FRAMEWORKS -->
+    <div class="section-block">
+      <div class="section-header">
+        <div>
+          <div class="section-header-label">Methodology</div>
+          <h2>Training Materials &amp; Frameworks</h2>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="resource-card-tag tag-training">Training</span>
+          <h3>Agentic AI for Commercial Leaders</h3>
+          <p>Internal training framework — explains agentic AI concepts in commercial operations language, with MedTech-specific examples and workflow illustrations.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">Add document</span>
+            <span class="resource-status">Placeholder</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <span class="resource-card-tag tag-training">Framework</span>
+          <h3>GTM Alignment Framework</h3>
+          <p>Structured methodology for aligning OEM strategy with distributor execution — channel mapping, KPI design, and territory penetration models.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">Add document</span>
+            <span class="resource-status">Placeholder</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <span class="resource-card-tag tag-training">Delivery</span>
+          <h3>Engagement Delivery Playbook</h3>
+          <p>Internal operating manual for running Valyntra client engagements — onboarding, diagnostic phases, deliverable templates, and client communication standards.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">Add document</span>
+            <span class="resource-status">Placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRISM -->
+    <div class="section-block">
+      <div class="section-header">
+        <div>
+          <div class="section-header-label">Platform Development</div>
+          <h2>PRISM</h2>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="resource-card-tag tag-platform">POC</span>
+          <h3>PRISM — POC Documentation</h3>
+          <p>Architecture overview, data model, and agentic workflow design for the PRISM revenue intelligence platform. Internal build reference.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">Add document</span>
+            <span class="resource-status wip">In Progress</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <span class="resource-card-tag tag-platform">Demo</span>
+          <h3>PRISM — Client Demo Script</h3>
+          <p>Structured walkthrough for presenting PRISM to prospective clients and investors — key messages, objection handling, and next step framing.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">Add document</span>
+            <span class="resource-status">Placeholder</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <span class="resource-card-tag tag-platform">Platform</span>
+          <h3>PRISM — Live Platform</h3>
+          <p>Access the PRISM platform directly at prism-health.ai.</p>
+          <div class="resource-card-footer">
+            <a href="https://prism-health.ai" target="_blank" class="resource-link">Open Platform <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+            <span class="resource-status live">Live</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLIENT ASSETS -->
+    <div class="section-block">
+      <div class="section-header">
+        <div>
+          <div class="section-header-label">GTM</div>
+          <h2>Client-Facing Assets</h2>
+        </div>
+      </div>
+      <div class="resource-grid">
+        <div class="resource-card">
+          <span class="resource-card-tag tag-internal">GTM</span>
+          <h3>Valyntra One-Pager</h3>
+          <p>Concise overview of Valyntra's value proposition, services, and engagement model — designed to share with prospective clients after initial contact.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">Add document</span>
+            <span class="resource-status">Placeholder</span>
+          </div>
+        </div>
+        <div class="resource-card">
+          <span class="resource-card-tag tag-internal">Investor</span>
+          <h3>Investor Briefing Deck</h3>
+          <p>Investment thesis, market sizing, pipeline data, PRISM platform overview, and founder background — for strategic partnership and capital discussions.</p>
+          <div class="resource-card-footer">
+            <span style="font-size:13px;color:var(--muted);">Add document</span>
+            <span class="resource-status">Placeholder</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Valyntra LLC · Internal Resource Library · Restricted Access</p>
+  </footer>
+
+</div>
+
+<script>
+  // Simple password gate — change this to your preferred access code
+  const ACCESS_CODE = 'valyntra2025';
+
+  function checkPassword() {
+    const input = document.getElementById('password').value;
+    const error = document.getElementById('login-error');
+    if (input === ACCESS_CODE) {
+      sessionStorage.setItem('vr_auth', 'true');
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('resources-screen').style.display = 'block';
+      error.style.display = 'none';
+    } else {
+      error.style.display = 'block';
+      document.getElementById('password').value = '';
+      document.getElementById('password').focus();
+    }
+  }
+
+  function logout() {
+    sessionStorage.removeItem('vr_auth');
+    document.getElementById('resources-screen').style.display = 'none';
+    document.getElementById('login-screen').style.display = 'flex';
+    document.getElementById('password').value = '';
+  }
+
+  // Allow Enter key on password field
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('password').addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') checkPassword();
+    });
+    // Auto-unlock if already authenticated this session
+    if (sessionStorage.getItem('vr_auth') === 'true') {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('resources-screen').style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
