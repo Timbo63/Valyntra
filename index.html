@@ -176,66 +176,6 @@ footer{background:#0A1628;border-top:1px solid rgba(255,255,255,0.08);padding:32
   .about-grid{grid-template-columns:1fr}
   .footer-inner{flex-direction:column;text-align:center}
 }
-
-/* ── SERVICES PAGE STYLES ── */
-.page-overlay{{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:var(--cream);z-index:200;overflow-y:auto}}
-.page-overlay.active{{display:block}}
-.page-close{{position:fixed;top:80px;right:24px;z-index:300;background:var(--navy);color:white;border:none;border-radius:50%;width:40px;height:40px;font-size:20px;cursor:pointer;display:none;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(0,0,0,0.2)}}
-.page-close.active{{display:flex}}
-
-/* Services styles */
-.srv-eyebrow{{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:14px}}
-.srv-header{{padding:100px 6% 80px;background:linear-gradient(160deg,var(--cream) 0%,#EAE6DF 100%)}}
-.srv-how{{background:var(--navy);padding:80px 6%}}
-.srv-how .srv-eyebrow{{color:rgba(75,123,245,0.8)}}
-.srv-how h2{{color:white}}
-.srv-how p{{color:rgba(255,255,255,0.55)}}
-.srv-principle{{border-left:2px solid rgba(75,123,245,0.4);padding:20px 24px;margin-bottom:16px;background:rgba(255,255,255,0.03);border-radius:0 10px 10px 0}}
-.srv-principle p{{color:rgba(255,255,255,0.7);margin:0;font-size:15px;line-height:1.7}}
-.srv-principle strong{{color:white;font-weight:500}}
-.srv-how-grid{{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}}
-.srv-section{{padding:80px 6%}}
-.srv-section.alt{{background:#EAE6DF}}
-.srv-grid{{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:48px}}
-.srv-card{{background:white;border:1px solid rgba(10,22,40,0.1);border-radius:16px;padding:40px;position:relative;transition:box-shadow .2s}}
-.srv-card:hover{{box-shadow:0 8px 32px rgba(10,22,40,0.08)}}
-.srv-card.featured{{border-color:var(--blue);border-width:1.5px}}
-.srv-tag{{display:inline-block;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:600;padding:4px 12px;border-radius:20px;margin-bottom:20px}}
-.srv-tag.entry{{background:rgba(27,79,216,0.08);color:var(--blue)}}
-.srv-tag.ongoing{{background:rgba(13,155,110,0.08);color:#0D9B6E}}
-.srv-tag.exec{{background:rgba(10,22,40,0.06);color:rgba(10,22,40,0.6)}}
-.srv-tag.partner{{background:rgba(10,22,40,0.06);color:rgba(10,22,40,0.5)}}
-.srv-num{{position:absolute;top:40px;right:40px;font-family:'Fraunces',serif;font-size:48px;font-weight:700;color:rgba(10,22,40,0.05);line-height:1}}
-.srv-divider{{height:1px;background:rgba(10,22,40,0.1);margin:24px 0}}
-.srv-meta{{display:flex;flex-direction:column;gap:12px}}
-.srv-meta-row{{display:flex;gap:12px;align-items:flex-start}}
-.srv-meta-label{{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:rgba(10,22,40,0.35);min-width:100px;flex-shrink:0;padding-top:2px}}
-.srv-meta-value{{font-size:14px;color:rgba(10,22,40,0.6);line-height:1.6}}
-.srv-card-cta{{margin-top:28px}}
-.srv-flow{{background:#EAE6DF;padding:80px 6%}}
-.srv-flow-steps{{display:flex;align-items:stretch;gap:0;margin-top:40px;border:1px solid rgba(10,22,40,0.1);border-radius:16px;overflow:hidden;background:white}}
-.srv-flow-step{{flex:1;padding:32px 28px;position:relative}}
-.srv-flow-step:not(:last-child){{border-right:1px solid rgba(10,22,40,0.1)}}
-.srv-flow-num{{font-family:'Fraunces',serif;font-size:36px;font-weight:700;color:rgba(27,79,216,0.15);line-height:1;margin-bottom:12px}}
-.srv-flow-title{{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px}}
-.srv-flow-body{{font-size:13px;color:rgba(10,22,40,0.55);line-height:1.6}}
-.srv-flow-note{{margin-top:24px;padding:16px 20px;background:rgba(10,22,40,0.04);border-radius:8px;font-size:13px;color:rgba(10,22,40,0.5);font-style:italic}}
-.srv-not-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:36px}}
-.srv-not-card{{background:white;border:1px solid rgba(10,22,40,0.1);border-radius:12px;padding:24px}}
-.srv-not-label{{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(10,22,40,0.3);margin-bottom:10px}}
-.srv-not-card h4{{font-size:15px;font-weight:500;color:var(--navy);margin-bottom:8px}}
-.srv-not-card p{{font-size:13px;color:rgba(10,22,40,0.55);line-height:1.6;margin:0}}
-.srv-cta{{background:var(--navy);text-align:center;padding:96px 6%}}
-.srv-cta h2{{color:white;margin-bottom:16px}}
-.srv-cta p{{color:rgba(255,255,255,0.5);max-width:480px;margin:0 auto 40px;font-size:17px;font-weight:300;line-height:1.75}}
-.srv-cta-actions{{display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}}
-.btn-cta-ghost{{color:rgba(255,255,255,0.6);font-size:14px;text-decoration:none;border:1px solid rgba(255,255,255,0.15);padding:15px 28px;border-radius:8px;transition:all .2s;display:inline-block}}
-.btn-cta-ghost:hover{{color:white;border-color:rgba(255,255,255,0.4)}}
-@media(max-width:900px){{
-  .srv-how-grid,.srv-grid,.srv-not-grid{{grid-template-columns:1fr}}
-  .srv-flow-steps{{flex-direction:column}}
-  .srv-flow-step:not(:last-child){{border-right:none;border-bottom:1px solid rgba(10,22,40,0.1)}}
-}}
 </style>
 </head>
 <body>
@@ -255,7 +195,7 @@ footer{background:#0A1628;border-top:1px solid rgba(255,255,255,0.08);padding:32
     </a>
     <div class="nav-links">
       <a href="#problem">The Problem</a>
-      <a href="#" onclick="openPage('servicesPage');return false;">Services</a>
+      <a href="services.html">Services</a>
       <a href="#diagnostic">The Diagnostic</a>
       <a href="#case-study">Case Study</a>
       <a href="#about">About</a>
@@ -539,7 +479,7 @@ footer{background:#0A1628;border-top:1px solid rgba(255,255,255,0.08);padding:32
     <div class="footer-logo">Valyn<span>tra</span></div>
     <div class="footer-links">
       <a href="#problem">The Problem</a>
-      <a href="#" onclick="openPage('servicesPage');return false;">Services</a>
+      <a href="services.html">Services</a>
       <a href="#diagnostic">The Diagnostic</a>
       <a href="#case-study">Case Study</a>
       <a href="#about">About</a>
@@ -560,33 +500,6 @@ const observer = new IntersectionObserver((entries) => {
 }, {threshold: 0.1});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-function openPage(id) {
-  const page = document.getElementById(id);
-  const btn = document.getElementById('pageClose');
-  if (page) {
-    page.classList.add('active');
-    btn.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    page.scrollTop = 0;
-    // Trigger reveals inside overlay
-    setTimeout(() => {
-      page.querySelectorAll('.reveal').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        el.classList.add('visible');
-      });
-    }, 100);
-  }
-}
-
-function closePage() {
-  document.querySelectorAll('.page-overlay').forEach(p => p.classList.remove('active'));
-  document.getElementById('pageClose').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-// Close on escape key
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closePage(); });
-
 // Google Ads tag
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -594,164 +507,5 @@ gtag('js', new Date());
 gtag('config', 'AW-18044236656');
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18044236656"></script>
-
-<!-- SERVICES PAGE OVERLAY -->
-<button class="page-close" id="pageClose" onclick="closePage()">×</button>
-<div class="page-overlay" id="servicesPage">
-  <div style="padding-top:64px;">
-
-    <!-- HEADER -->
-    <div class="srv-header">
-      <div class="inner-narrow">
-        <div class="srv-eyebrow reveal">Services</div>
-        <h1 class="reveal" style="font-family:'Fraunces',serif;font-size:clamp(36px,5vw,60px);font-weight:700;line-height:1.08;letter-spacing:-1px;color:var(--navy);margin-bottom:20px;">From AI ideas<br>to working operations.</h1>
-        <p class="reveal" style="font-size:19px;color:rgba(10,22,40,0.55);line-height:1.7;font-weight:300;max-width:580px;">Valyntra works with business leaders to identify where AI creates real value, prioritize what to act on, and support execution where needed. Every engagement starts with understanding your operations — not with tools.</p>
-      </div>
-    </div>
-
-    <!-- HOW WE WORK -->
-    <div class="srv-how">
-      <div class="inner">
-        <div class="srv-how-grid">
-          <div>
-            <div class="srv-eyebrow">How We Work</div>
-            <h2 style="font-family:'Fraunces',serif;font-size:clamp(26px,3vw,40px);font-weight:600;color:white;margin-bottom:16px;">We do not start with tools.</h2>
-            <p>We start with your workflows, decisions, and operational constraints. Only then do we identify where AI creates defensible, measurable value.</p>
-            <p>Every engagement is scoped clearly, delivered personally by Timothy Sharp, and structured to give you something actionable — not a report that sits on a shelf.</p>
-          </div>
-          <div>
-            <div class="srv-principle">
-              <p><strong>Start with the Diagnostic.</strong> Before any advisory or implementation work, we need to understand your operations. The Diagnostic produces a written report — your AI readiness, top opportunities, and where not to invest.</p>
-            </div>
-            <div class="srv-principle">
-              <p><strong>Move at the pace that fits your business.</strong> Some clients take the Diagnostic and execute independently. Others move into Advisory or Implementation. There is no pressure to do more than you need.</p>
-            </div>
-            <div class="srv-principle">
-              <p><strong>No outsourcing. No generic outputs.</strong> Every evaluation, recommendation, and engagement is handled directly by Timothy Sharp. What you receive reflects your business — not a template.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SERVICES MENU -->
-    <div class="srv-section" style="background:var(--cream);">
-      <div class="inner">
-        <div class="srv-eyebrow">What We Offer</div>
-        <h2 style="font-family:'Fraunces',serif;font-size:clamp(26px,3vw,40px);font-weight:600;color:var(--navy);margin-bottom:16px;">Four ways to engage.</h2>
-        <p style="max-width:540px;font-size:16px;color:rgba(10,22,40,0.55);line-height:1.8;margin-bottom:0;">Each service is designed for a specific stage of your AI journey. Most clients begin with the Diagnostic — it informs everything that follows.</p>
-
-        <div class="srv-grid">
-
-          <div class="srv-card featured">
-            <div class="srv-num">01</div>
-            <div class="srv-tag entry">Entry Point</div>
-            <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:10px;">AI Diagnostic</h3>
-            <p style="font-size:15px;color:rgba(10,22,40,0.6);margin-bottom:0;">A structured, fixed-scope engagement that produces a written AI Opportunity Report — a clear expert view of where AI fits and where it does not, before any investment is made.</p>
-            <div class="srv-divider"></div>
-            <div class="srv-meta">
-              <div class="srv-meta-row"><div class="srv-meta-label">What it is</div><div class="srv-meta-value">Fixed-scope engagement. Complete an intake form, we analyze your workflows, deliver a written report in 5 business days.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">What you get</div><div class="srv-meta-value">AI Readiness Score · Problem-to-opportunity mapping · Top 3–5 ranked opportunities · ROI snapshot · Build vs buy guidance · What not to do · 30-day action plan</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">When to use</div><div class="srv-meta-value">Before investing in AI tools, hiring AI talent, or committing budget to any AI initiative.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">You receive</div><div class="srv-meta-value">Written PDF. Complete and actionable on its own. Transparent flat fee. No retainer.</div></div>
-            </div>
-            <div class="srv-card-cta"><a href="https://calendly.com/timothy-valyntra/30min" class="btn-primary">Start with the Diagnostic</a></div>
-          </div>
-
-          <div class="srv-card">
-            <div class="srv-num">02</div>
-            <div class="srv-tag ongoing">Ongoing</div>
-            <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:10px;">AI Advisory</h3>
-            <p style="font-size:15px;color:rgba(10,22,40,0.6);margin-bottom:0;">Ongoing guidance for leadership teams navigating AI adoption. Structured around your workflows, decisions, and operational priorities — not a generic retainer.</p>
-            <div class="srv-divider"></div>
-            <div class="srv-meta">
-              <div class="srv-meta-row"><div class="srv-meta-label">What it is</div><div class="srv-meta-value">Recurring monthly or quarterly engagement focused on AI prioritization, workflow alignment, and decision support.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">What you get</div><div class="srv-meta-value">Ongoing AI opportunity review · Workflow and pipeline alignment · Vendor-neutral guidance · Decision support for leadership</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">When to use</div><div class="srv-meta-value">After completing the Diagnostic, when you want structured guidance without committing to full implementation support.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">Best for</div><div class="srv-meta-value">Leadership teams with internal capacity to execute who want an experienced outside perspective on AI decisions.</div></div>
-            </div>
-            <div class="srv-card-cta"><a href="https://calendly.com/timothy-valyntra/30min" class="btn-outline">Request a conversation</a></div>
-          </div>
-
-          <div class="srv-card">
-            <div class="srv-num">03</div>
-            <div class="srv-tag exec">Execution</div>
-            <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:10px;">AI Implementation</h3>
-            <p style="font-size:15px;color:rgba(10,22,40,0.6);margin-bottom:0;">Turning strategy into working systems. For organizations ready to move from Diagnostic recommendations to deployment.</p>
-            <div class="srv-divider"></div>
-            <div class="srv-meta">
-              <div class="srv-meta-row"><div class="srv-meta-label">What it is</div><div class="srv-meta-value">Scoped execution engagement. We work alongside your team to deploy AI solutions — coordinating vendors, managing integration, measuring outcomes.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">What you get</div><div class="srv-meta-value">Vendor selection and coordination · Workflow and AI deployment · Integration oversight · Outcome measurement against ROI targets</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">When to use</div><div class="srv-meta-value">When your organization is ready to act on Diagnostic findings and wants structured execution support — not just a plan.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">Best for</div><div class="srv-meta-value">Organizations that want to move fast without building internal AI infrastructure from scratch.</div></div>
-            </div>
-            <div class="srv-card-cta"><a href="https://calendly.com/timothy-valyntra/30min" class="btn-outline">Request a conversation</a></div>
-          </div>
-
-          <div class="srv-card">
-            <div class="srv-num">04</div>
-            <div class="srv-tag partner">Optional Path</div>
-            <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:10px;">Partner Match</h3>
-            <p style="font-size:15px;color:rgba(10,22,40,0.6);margin-bottom:0;">When Valyntra is not the right execution partner, we introduce vetted vendors suited to your needs — and maintain oversight if requested.</p>
-            <div class="srv-divider"></div>
-            <div class="srv-meta">
-              <div class="srv-meta-row"><div class="srv-meta-label">What it is</div><div class="srv-meta-value">Structured referral to pre-vetted development and AI implementation partners — matched to your industry, budget, and scope.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">What you get</div><div class="srv-meta-value">Vendor introduction with Diagnostic context · Clear briefing on your requirements · Optional ongoing oversight from Valyntra</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">When to use</div><div class="srv-meta-value">When implementation needs exceed Valyntra's current scope — large-scale builds or multi-system integration.</div></div>
-              <div class="srv-meta-row"><div class="srv-meta-label">Why it matters</div><div class="srv-meta-value">You get the right partner for your actual needs — not a vendor chosen by default.</div></div>
-            </div>
-            <div class="srv-card-cta"><a href="https://calendly.com/timothy-valyntra/30min" class="btn-outline">Request a conversation</a></div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- ENGAGEMENT FLOW -->
-    <div class="srv-flow">
-      <div class="inner">
-        <div class="srv-eyebrow">Engagement Flow</div>
-        <h2 style="font-family:'Fraunces',serif;font-size:clamp(26px,3vw,40px);font-weight:600;color:var(--navy);margin-bottom:16px;">How engagements typically progress.</h2>
-        <p style="max-width:540px;font-size:16px;color:rgba(10,22,40,0.55);line-height:1.8;margin-bottom:0;">Most clients begin with the Diagnostic. Where they go from there depends on what the report surfaces and what their organization is ready to act on.</p>
-        <div class="srv-flow-steps">
-          <div class="srv-flow-step"><div class="srv-flow-num">01</div><div class="srv-flow-title">Diagnostic</div><div class="srv-flow-body">Understand your operations. Identify where AI creates real value. Produce a written report with prioritized recommendations.</div></div>
-          <div class="srv-flow-step"><div class="srv-flow-num">02</div><div class="srv-flow-title">Advisory</div><div class="srv-flow-body">Ongoing guidance as you begin acting on recommendations. Structured around your decisions and evolving priorities.</div></div>
-          <div class="srv-flow-step"><div class="srv-flow-num">03</div><div class="srv-flow-title">Implementation</div><div class="srv-flow-body">Execution support to deploy solutions. Vendor coordination and outcome measurement against ROI targets.</div></div>
-          <div class="srv-flow-step"><div class="srv-flow-num">04</div><div class="srv-flow-title">Partner Match</div><div class="srv-flow-body">Where scope exceeds Valyntra's direct delivery, vetted partners are introduced with full context from your Diagnostic.</div></div>
-        </div>
-        <div class="srv-flow-note">Not every client moves through all four stages. Many complete the Diagnostic and execute independently. The path forward is always your choice.</div>
-      </div>
-    </div>
-
-    <!-- WHAT THIS IS NOT -->
-    <div class="srv-section" style="background:var(--cream);">
-      <div class="inner">
-        <div class="srv-eyebrow">What This Is Not</div>
-        <h2 style="font-family:'Fraunces',serif;font-size:clamp(26px,3vw,40px);font-weight:600;color:var(--navy);margin-bottom:16px;">A few things worth clarifying.</h2>
-        <div class="srv-not-grid">
-          <div class="srv-not-card"><div class="srv-not-label">Not this</div><h4>A generic AI audit</h4><p>The Diagnostic is built around your specific workflows and operational constraints — not a checklist applied uniformly across industries.</p></div>
-          <div class="srv-not-card"><div class="srv-not-label">Not this</div><h4>A tool recommendation service</h4><p>We have no vendor relationships or affiliate arrangements. Recommendations are based entirely on what fits your business.</p></div>
-          <div class="srv-not-card"><div class="srv-not-label">Not this</div><h4>Theoretical consulting</h4><p>Every engagement produces a defined deliverable. The Diagnostic produces a written report. Implementation produces working systems.</p></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- SERVICES CTA -->
-    <div class="srv-cta">
-      <div class="inner">
-        <div class="srv-eyebrow" style="color:rgba(75,123,245,0.7);">Get Started</div>
-        <h2 style="font-family:'Fraunces',serif;font-size:clamp(26px,3vw,40px);font-weight:600;color:white;margin-bottom:16px;">The right place to start<br>is the Diagnostic.</h2>
-        <p>Before tools. Before budget. Before vendors. A clear, written view of where AI creates real value in your specific operations.</p>
-        <div class="srv-cta-actions">
-          <a href="https://calendly.com/timothy-valyntra/30min" class="btn-primary" style="font-size:15px;padding:16px 36px;">Book a Free 30-Min Call</a>
-          <a href="mailto:timothy@valyntra.io" class="btn-cta-ghost">Send an email instead</a>
-        </div>
-        <p style="font-size:12px;color:rgba(255,255,255,0.25);margin-top:20px;">No pitch. No obligation. Timothy responds to every inquiry within 24–48 hours.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
 </body>
 </html>
